@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: CourseSelectorAPI
+  profiles:
+    active: dev
+server:
+  servlet:
+    path-context: /v1/course-selector
