@@ -2,7 +2,7 @@ package com.slasher.CourseSelectorAPI.service.exception;
 
 public class AsignaturaPorCarreraNotFoundException extends RuntimeException {
 
-  public AsignaturaPorCarreraNotFoundException of(long idAsignaturaPorCarrera) {
+  public static AsignaturaPorCarreraNotFoundException of(long idAsignaturaPorCarrera) {
     return new AsignaturaPorCarreraNotFoundException(idAsignaturaPorCarrera);
   }
 
