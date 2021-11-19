@@ -2,6 +2,8 @@ package com.slasher.CourseSelectorAPI.api;
 
 import com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera;
 import com.slasher.CourseSelectorAPI.service.AsignaturaPorCarreraService;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Rest controller que nos da una capa en la cual podemos
+ * únicamente ejecutar y tratar el happy case del consumo de
+ * los diferentes EndPoints gracias al desacoplamiento de código
+ * en el nivel de servicio.
+ */
 @RestController
 @RequestMapping(path = "/asignatura-por-carrera")
 public class AsignaturaPorCarreraRestController {
@@ -27,30 +35,48 @@ public class AsignaturaPorCarreraRestController {
     this.asigPorCarreraService = asigPorCarreraService;
   }
 
+  @ApiResponses({
+      @ApiResponse(code = 422, message = "unprocessable entity"),
+      @ApiResponse(code = 201, message = "created")
+  })
   @PostMapping(path = "/create")
   public ResponseEntity<AsignaturaPorCarrera> createAsignaturaPorCarrera(@RequestBody AsignaturaPorCarrera asignaturaPorCarrera) {
     return new ResponseEntity<>(asigPorCarreraService
         .createAsignaturaPorCarrera(asignaturaPorCarrera), HttpStatus.CREATED);
   }
 
+  @ApiResponses({
+      @ApiResponse(code = 422, message = "unprocessable entity"),
+      @ApiResponse(code = 404, message = "entity was not found"),
+      @ApiResponse(code = 200, message = "ok")
+  })
   @DeleteMapping(path = "/delete/{id}")
   public ResponseEntity<Boolean> deleteAsignaturaPorCarrera(@PathVariable long id) {
     asigPorCarreraService.deleteAsignaturaPorCarreraById(id);
     return new ResponseEntity<>(true, HttpStatus.OK);
   }
 
+  @ApiResponses({
+      @ApiResponse(code = 422, message = "unprocessable entity"),
+      @ApiResponse(code = 202, message = "accepted")
+  })
   @PutMapping(path = "/update")
   public ResponseEntity<AsignaturaPorCarrera> updateAsignaturaPorCarrera(@RequestBody AsignaturaPorCarrera asignaturaPorCarrera) {
     return new ResponseEntity<>(asigPorCarreraService
         .updateAsignaturaPorCarrera(asignaturaPorCarrera), HttpStatus.ACCEPTED);
   }
 
+  @ApiResponses({
+      @ApiResponse(code = 404, message = "entity was not found"),
+      @ApiResponse(code = 200, message = "ok")
+  })
   @GetMapping(path = "/get/{id}")
   public ResponseEntity<AsignaturaPorCarrera> getAsignaturaPorCarreraById(@PathVariable long id) {
     return new ResponseEntity<>(asigPorCarreraService
         .getAsignaturaPorCarreraById(id), HttpStatus.OK);
   }
 
+  @ApiResponse(code = 200, message = "ok")
   @GetMapping(path = "/get/all")
   public ResponseEntity<List<AsignaturaPorCarrera>> getAllAsignaturasPorCarrera() {
     return new ResponseEntity<>(asigPorCarreraService
