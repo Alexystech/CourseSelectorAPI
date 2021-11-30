@@ -1,7 +1,7 @@
 package com.slasher.CourseSelectorAPI.api;
 
-import com.slasher.CourseSelectorAPI.entity.Horario;
-import com.slasher.CourseSelectorAPI.service.HorarioService;
+import com.slasher.CourseSelectorAPI.entity.Hora;
+import com.slasher.CourseSelectorAPI.service.HoraService;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +25,14 @@ import java.util.List;
  * en el nivel de servicio.
  */
 @RestController
-@RequestMapping(path = "/horario")
-public class HorarioRestController {
+@RequestMapping(path = "/hora")
+public class HoraRestController {
 
-  private final HorarioService horarioService;
+  private final HoraService horaService;
 
   @Autowired
-  public HorarioRestController(HorarioService horarioService) {
-    this.horarioService = horarioService;
+  public HoraRestController(HoraService horaService) {
+    this.horaService = horaService;
   }
 
   @ApiResponses({
@@ -40,9 +40,9 @@ public class HorarioRestController {
       @ApiResponse(code = 201, message = "created")
   })
   @PostMapping(path = "/create")
-  public ResponseEntity<Horario> createHorario(@RequestBody Horario horario) {
-    return new ResponseEntity<>(horarioService
-        .createHorario(horario), HttpStatus.CREATED);
+  public ResponseEntity<Hora> createHora(@RequestBody Hora hora) {
+    return new ResponseEntity<>(horaService
+        .createHora(hora), HttpStatus.CREATED);
   }
 
   @ApiResponses({
@@ -51,8 +51,8 @@ public class HorarioRestController {
       @ApiResponse(code = 200, message = "ok")
   })
   @DeleteMapping(path = "/delete/{id}")
-  public ResponseEntity<Boolean> deleteHorarioById(@PathVariable long id) {
-    horarioService.deleteHorarioById(id);
+  public ResponseEntity<Boolean> deleteHoraById(@PathVariable long id) {
+    horaService.deleteHoraById(id);
     return new ResponseEntity<>(true, HttpStatus.OK);
   }
 
@@ -61,9 +61,9 @@ public class HorarioRestController {
       @ApiResponse(code = 202, message = "accepted")
   })
   @PutMapping(path = "/update")
-  public ResponseEntity<Horario> updateHorario(@RequestBody Horario horario) {
-    return new ResponseEntity<>(horarioService
-        .updateHorario(horario), HttpStatus.ACCEPTED);
+  public ResponseEntity<Hora> updateHora(@RequestBody Hora hora) {
+    return new ResponseEntity<>(horaService
+        .updateHora(hora), HttpStatus.ACCEPTED);
   }
 
   @ApiResponses({
@@ -71,14 +71,14 @@ public class HorarioRestController {
       @ApiResponse(code = 200, message = "ok")
   })
   @GetMapping(path = "/get/{id}")
-  public ResponseEntity<Horario> getHorarioById(@PathVariable long id) {
-    return new ResponseEntity<>(horarioService.getHorarioById(id), HttpStatus.OK);
+  public ResponseEntity<Hora> getHoraById(@PathVariable long id) {
+    return new ResponseEntity<>(horaService.getHoraById(id), HttpStatus.OK);
   }
 
   @ApiResponse(code = 200, message = "ok")
   @GetMapping(path = "/get/all")
-  public ResponseEntity<List<Horario>> getAllHorarios() {
-    return new ResponseEntity<>(horarioService.getAllHorarios(), HttpStatus.OK);
+  public ResponseEntity<List<Hora>> getAllHoras() {
+    return new ResponseEntity<>(horaService.getAllHoras(), HttpStatus.OK);
   }
 
 }

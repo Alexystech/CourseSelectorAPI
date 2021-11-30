@@ -11,29 +11,34 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.time.LocalTime;
 
 @Entity
-@Table(name = "horarios")
+@Table(name = "semestres")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-public class Horario {
+public class Semestre {
 
   @Id
+  @Column(name = "id_semestre")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_horario")
-  private Long idHorario;
+  private Long idSemestre;
 
-  @Column(name = "hora_disp")
-  private LocalTime horaDisp;
+  @Column(name = "semestre")
+  private Integer semestre;
 
-  private Horario(LocalTime horaDisp) {
-    super();
-    this.horaDisp = horaDisp;
+  @OneToOne(mappedBy = "idSemestre")
+  private AsignaturaPorCarrera asignaturaPorCarrera;
+
+  @OneToOne(mappedBy = "idSemestre")
+  private AsigHorarioDef asigHorarioDef;
+
+  public Semestre(Integer semestre) {
+    this.semestre = semestre;
   }
 
 }

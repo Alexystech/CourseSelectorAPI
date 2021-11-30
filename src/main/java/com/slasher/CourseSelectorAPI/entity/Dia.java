@@ -11,35 +11,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "carreras")
+@Table(name = "dias")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-public class Carrera {
+public class Dia {
 
   @Id
+  @Column(name = "id_dia")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_carrera")
-  private Long idCarrera;
+  private Long idDia;
 
-  @Column(name = "nombre_carrera", length = 75)
-  private String nombreCarrera;
+  @Column(name = "nombre_dia", length = 45)
+  private String nombreDia;
 
-  @OneToOne
-  @JoinColumn(name = "fk_id_jefe_carrera", referencedColumnName = "id_jefe_de_carrera")
-  private JefeCarrera jefeCarrera;
-
-  public Carrera(String nombreCarrera, JefeCarrera jefeCarrera) {
+  public Dia(String nombreDia) {
     super();
-    this.nombreCarrera = nombreCarrera;
-    this.jefeCarrera = jefeCarrera;
+    this.nombreDia = nombreDia;
   }
 
 }

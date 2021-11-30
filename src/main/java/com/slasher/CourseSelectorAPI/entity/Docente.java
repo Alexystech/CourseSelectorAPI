@@ -8,10 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -50,8 +48,7 @@ public class Docente {
   @Column(length = 11)
   private String nss;
 
-  @ManyToOne(fetch = FetchType.EAGER)
-  @JoinColumn(name = "fk_id_asig_por_carrera", referencedColumnName = "id_asig_por_carrera", nullable = false)
-  private AsignaturaPorCarrera idAsigPorCarrera;
+  @OneToOne(mappedBy = "idDocente")
+  private AsigHorarioDef asigHorarioDef;
 
 }

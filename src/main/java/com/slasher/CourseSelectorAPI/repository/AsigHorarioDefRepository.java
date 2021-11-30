@@ -1,9 +1,9 @@
 package com.slasher.CourseSelectorAPI.repository;
 
-import com.slasher.CourseSelectorAPI.entity.Horario;
+import com.slasher.CourseSelectorAPI.entity.AsigHorarioDef;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HorarioRepository extends CrudRepository<Horario, Long> {
+public interface AsigHorarioDefRepository extends CrudRepository<AsigHorarioDef, Long> {
 }

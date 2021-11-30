@@ -37,7 +37,7 @@ public class Escolaridad {
   private String carrera;
 
   @ManyToOne(fetch = FetchType.EAGER)
-  @JoinColumn(name = "docentes_id_docente", referencedColumnName = "id_docente", nullable = false)
+  @JoinColumn(name = "fk_id_docente", referencedColumnName = "id_docente", nullable = false)
   private Docente idDocente;
 
   public Escolaridad(String cedulaProfecional, String carrera, Docente idDocente) {

@@ -1,14 +1,24 @@
 package com.slasher.CourseSelectorAPI.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "jefes_de_carrera")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Getter
+@Setter
 public class JefeCarrera {
 
   @Id
@@ -38,8 +48,19 @@ public class JefeCarrera {
   @Column(length = 11)
   private String nss;
 
-  @OneToOne
-  @JoinColumn(name = "carreras_id_carrera", referencedColumnName = "id_carrera")
-  private Carrera idCarrera;
+  @OneToOne(mappedBy = "jefeCarrera")
+  private Carrera carrera;
 
+  public JefeCarrera(String password, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc, String curp, String domicilio, String nss, Carrera carrera) {
+    super();
+    this.password = password;
+    this.nombre = nombre;
+    this.apellidoPaterno = apellidoPaterno;
+    this.apellidoMaterno = apellidoMaterno;
+    this.rfc = rfc;
+    this.curp = curp;
+    this.domicilio = domicilio;
+    this.nss = nss;
+    this.carrera = carrera;
+  }
 }

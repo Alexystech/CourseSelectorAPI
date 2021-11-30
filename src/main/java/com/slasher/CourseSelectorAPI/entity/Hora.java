@@ -12,34 +12,38 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.time.LocalTime;
 
 @Entity
-@Table(name = "carreras")
+@Table(name = "horas")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-public class Carrera {
+public class Hora {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_carrera")
-  private Long idCarrera;
+  @Column(name = "id_hora")
+  private Long idHora;
 
-  @Column(name = "nombre_carrera", length = 75)
-  private String nombreCarrera;
+  @Column(name = "hora_disp")
+  private LocalTime hora;
 
-  @OneToOne
-  @JoinColumn(name = "fk_id_jefe_carrera", referencedColumnName = "id_jefe_de_carrera")
-  private JefeCarrera jefeCarrera;
+  @ManyToOne
+  @JoinColumn(name = "fk_id_dia", referencedColumnName = "id_dia", nullable = false)
+  private Dia dia;
 
-  public Carrera(String nombreCarrera, JefeCarrera jefeCarrera) {
+  @OneToOne(mappedBy = "idHora")
+  private AsigHorarioDef asigHorarioDef;
+
+  public Hora(LocalTime hora, Dia dia) {
     super();
-    this.nombreCarrera = nombreCarrera;
-    this.jefeCarrera = jefeCarrera;
+    this.hora = hora;
+    this.dia = dia;
   }
-
 }

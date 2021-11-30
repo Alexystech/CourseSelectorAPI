@@ -27,8 +27,8 @@ public enum SupportedException {
   DOCENTE_NOT_FOUND(DocenteNotFoundException.class, HttpStatus.NOT_FOUND),
   ESCOLARIDAD_IS_NULL(EscolaridadIsNullException.class, HttpStatus.UNPROCESSABLE_ENTITY),
   ESCOLARIDAD_NOT_FOUND(EscolaridadNotFoundException.class, HttpStatus.NOT_FOUND),
-  HORARIO_IS_NULL(HorarioIsNullException.class, HttpStatus.UNPROCESSABLE_ENTITY),
-  HORARIO_NOT_FOUND(HorarioNotFoundException.class, HttpStatus.NOT_FOUND),
+  HORA_IS_NULL(HoraIsNullException.class, HttpStatus.UNPROCESSABLE_ENTITY),
+  HORA_NOT_FOUND(HoraNotFoundException.class, HttpStatus.NOT_FOUND),
   JEFE_CARRERA_ID_IS_EMPTY(JefeCarreraIdIsEmptyException.class, HttpStatus.NOT_ACCEPTABLE),
   JEFE_CARRERA_IS_NULL(JefeCarreraIsNullException.class, HttpStatus.UNPROCESSABLE_ENTITY),
   JEFE_CARRERA_NOT_FOUND(JefeCarreraNotFoundException.class, HttpStatus.NOT_FOUND);

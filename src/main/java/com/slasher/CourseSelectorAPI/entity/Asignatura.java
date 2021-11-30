@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +30,9 @@ public class Asignatura {
 
   @Column(name = "nombre_asignatura", length = 75)
   private String nombreAsignatura;
+
+  @OneToOne(mappedBy = "idAsignatura")
+  private AsigHorarioDef asigHorarioDef;
 
   public Asignatura(String nombreAsignatura) {
     super();
