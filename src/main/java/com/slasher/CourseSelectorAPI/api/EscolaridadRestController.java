@@ -82,4 +82,10 @@ public class EscolaridadRestController {
     return new ResponseEntity<>(escolaridadService.getAllEscolaridades(), HttpStatus.OK);
   }
 
+  @GetMapping(path = "/get/by/docente/{idDocente}")
+  public ResponseEntity<List<Escolaridad>> getEscolaridadesByIdDocente(@PathVariable String idDocente) {
+    return new ResponseEntity<>(escolaridadService.getEscolaridadesByIdDocente(idDocente)
+        , HttpStatus.OK);
+  }
+
 }

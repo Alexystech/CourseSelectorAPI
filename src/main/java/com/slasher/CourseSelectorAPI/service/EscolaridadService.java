@@ -10,4 +10,5 @@ public interface EscolaridadService {
   Escolaridad updateEscolaridad(Escolaridad escolaridad);
   Escolaridad getEscolaridadById(long id);
   List<Escolaridad> getAllEscolaridades();
+  List<Escolaridad> getEscolaridadesByIdDocente(String idDocente);
 }

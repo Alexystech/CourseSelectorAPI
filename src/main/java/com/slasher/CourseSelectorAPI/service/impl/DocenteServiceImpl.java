@@ -70,4 +70,18 @@ public class DocenteServiceImpl implements DocenteService {
   public List<Docente> getAllDocentes() {
     return ((List<Docente>) docenteRepository.findAll());
   }
+
+  @Override
+  public Boolean login(Docente docente) {
+
+    boolean loginAuth = getAllDocentes().stream().anyMatch(professor ->
+        professor.getIdDocente().equals(docente.getIdDocente()) &&
+        professor.getPassword().equals(docente.getPassword()));
+
+    if (loginAuth) {
+      return true;
+    }
+
+    return false;
+  }
 }

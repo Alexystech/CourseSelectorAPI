@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EscolaridadServiceImpl implements EscolaridadService {
@@ -64,5 +65,12 @@ public class EscolaridadServiceImpl implements EscolaridadService {
   @Override
   public List<Escolaridad> getAllEscolaridades() {
     return ((List<Escolaridad>) escolaridadRepository.findAll());
+  }
+
+  @Override
+  public List<Escolaridad> getEscolaridadesByIdDocente(String idDocente) {
+    return getAllEscolaridades().stream()
+        .filter( escolaridad -> escolaridad.getIdDocente().getIdDocente().equals(idDocente))
+        .collect(Collectors.toList());
   }
 }

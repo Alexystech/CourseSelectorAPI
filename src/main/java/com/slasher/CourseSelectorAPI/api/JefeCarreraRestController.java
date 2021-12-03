@@ -82,4 +82,10 @@ public class JefeCarreraRestController {
     return new ResponseEntity<>(jefeCarreraService.getAllJefesCarrera(), HttpStatus.OK);
   }
 
+  @PostMapping(path = "/auth/jefe-carrera")
+  public ResponseEntity<Boolean> loginJefeCarrera(@RequestBody JefeCarrera jefeCarrera) {
+    return new ResponseEntity<>(jefeCarreraService.login(jefeCarrera)
+        , HttpStatus.ACCEPTED);
+  }
+
 }

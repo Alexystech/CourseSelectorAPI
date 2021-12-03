@@ -1,6 +1,7 @@
 package com.slasher.CourseSelectorAPI.service;
 
 import com.slasher.CourseSelectorAPI.entity.AsignacionHorario;
+import com.slasher.CourseSelectorAPI.util.Horario;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ public interface AsignacionHorarioService {
   AsignacionHorario updateAsignacionHorario(AsignacionHorario asignacionHorario);
   AsignacionHorario getAsignacionHorarioById(long idAsignacionHorario);
   List<AsignacionHorario> getAllAsignacionHorarios();
+  Boolean existAnyAsigHorarioByDocenteId(String idDocente);
+  List<Horario> findAllAsignacionesByIdDocente(String idDocente);
 }

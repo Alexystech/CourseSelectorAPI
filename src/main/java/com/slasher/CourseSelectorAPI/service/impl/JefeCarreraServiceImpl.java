@@ -68,6 +68,21 @@ public class JefeCarreraServiceImpl implements JefeCarreraService {
 
   @Override
   public List<JefeCarrera> getAllJefesCarrera() {
-    return ((List<JefeCarrera>) jefeCarreraRepository.findAll());
+    List<JefeCarrera> list = ((List<JefeCarrera>) jefeCarreraRepository.findAll());
+    return list;
+  }
+
+  @Override
+  public Boolean login(JefeCarrera jefeCarrera) {
+
+    boolean authResult = getAllJefesCarrera().stream().anyMatch( cco ->
+        cco.getIdJefeCarrera().equals(jefeCarrera.getIdJefeCarrera()) &&
+        cco.getPassword().equals(jefeCarrera.getPassword()));
+
+    if (authResult) {
+      return true;
+    }
+
+    return false;
   }
 }

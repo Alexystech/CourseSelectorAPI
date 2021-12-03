@@ -30,11 +30,11 @@ public class AsignacionHorario {
   @Column(name = "id_asig_horario")
   private Long idAsigHorario;
 
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne
   @JoinColumn(name = "fk_id_docente", referencedColumnName = "id_docente", nullable = false)
   private Docente idDocente;
 
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne
   @JoinColumn(name = "fk_id_hora", referencedColumnName = "id_hora", nullable = false)
   private Hora idHora;
 

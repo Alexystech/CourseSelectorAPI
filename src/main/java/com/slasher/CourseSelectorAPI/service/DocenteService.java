@@ -10,4 +10,5 @@ public interface DocenteService {
   Docente updateDocente(Docente docente);
   Docente getDocenteById(String id);
   List<Docente> getAllDocentes();
+  Boolean login(Docente docente);
 }

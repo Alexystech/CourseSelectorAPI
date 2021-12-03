@@ -81,4 +81,10 @@ public class DocenteRestController {
     return new ResponseEntity<>(docenteService.getAllDocentes(), HttpStatus.OK);
   }
 
+  @PostMapping(path = "/auth/docente")
+  public ResponseEntity<Boolean> loginDocente(@RequestBody Docente docente) {
+    return new ResponseEntity<>(docenteService.login(docente)
+        , HttpStatus.ACCEPTED);
+  }
+
 }

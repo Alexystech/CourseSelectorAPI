@@ -3,6 +3,7 @@ package com.slasher.CourseSelectorAPI.service.impl;
 import com.slasher.CourseSelectorAPI.entity.AsigHorarioDef;
 import com.slasher.CourseSelectorAPI.repository.AsigHorarioDefRepository;
 import com.slasher.CourseSelectorAPI.service.AsigHorarioDefService;
+import com.slasher.CourseSelectorAPI.util.AsigHorarioDefByDocente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +42,10 @@ public class AsigHorarioServiceImpl implements AsigHorarioDefService {
   @Override
   public List<AsigHorarioDef> getAllAsignaciones() {
     return ((List<AsigHorarioDef>) asignacionRepository.findAll());
+  }
+
+  @Override
+  public List<AsigHorarioDefByDocente> getAllAsignacionesByIdDocente(String idDocente) {
+    return asignacionRepository.findAsigHorariosByIdDocente(idDocente);
   }
 }

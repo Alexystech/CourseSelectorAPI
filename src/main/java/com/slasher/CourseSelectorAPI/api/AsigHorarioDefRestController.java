@@ -2,6 +2,7 @@ package com.slasher.CourseSelectorAPI.api;
 
 import com.slasher.CourseSelectorAPI.entity.AsigHorarioDef;
 import com.slasher.CourseSelectorAPI.service.AsigHorarioDefService;
+import com.slasher.CourseSelectorAPI.util.AsigHorarioDefByDocente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,12 @@ public class AsigHorarioDefRestController {
   @GetMapping(path = "/get/all")
   public ResponseEntity<List<AsigHorarioDef>> getAllAsignaciones() {
     return new ResponseEntity<>(asignacionService.getAllAsignaciones()
+        , HttpStatus.OK);
+  }
+
+  @GetMapping(path = "/get/all/asignaciones/by/docente/{idDocente}")
+  public ResponseEntity<List<AsigHorarioDefByDocente>> getAllAsignacionesByIdDocente(@PathVariable String idDocente) {
+    return new ResponseEntity<>(asignacionService.getAllAsignacionesByIdDocente(idDocente)
         , HttpStatus.OK);
   }
 

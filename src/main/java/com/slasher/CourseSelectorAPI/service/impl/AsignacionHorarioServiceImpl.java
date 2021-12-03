@@ -5,11 +5,13 @@ import com.slasher.CourseSelectorAPI.repository.AsignacionHorarioRepository;
 import com.slasher.CourseSelectorAPI.service.AsignacionHorarioService;
 import com.slasher.CourseSelectorAPI.service.exception.AsignacionHorarioIsNullException;
 import com.slasher.CourseSelectorAPI.service.exception.AsignacionHorarioNotFoundException;
+import com.slasher.CourseSelectorAPI.util.Horario;
 import io.vavr.control.Try;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AsignacionHorarioServiceImpl implements AsignacionHorarioService {
@@ -65,5 +67,16 @@ public class AsignacionHorarioServiceImpl implements AsignacionHorarioService {
   @Override
   public List<AsignacionHorario> getAllAsignacionHorarios() {
     return ((List<AsignacionHorario>) asigHorarioRepository.findAll());
+  }
+
+  @Override
+  public Boolean existAnyAsigHorarioByDocenteId(String idDocente) {
+    return getAllAsignacionHorarios().stream().anyMatch(asignacionHorario ->
+        asignacionHorario.getIdDocente().getIdDocente().equals(idDocente));
+  }
+
+  @Override
+  public List<Horario> findAllAsignacionesByIdDocente(String idDocente) {
+    return asigHorarioRepository.findAllAsignacionesByIdDocente(idDocente);
   }
 }

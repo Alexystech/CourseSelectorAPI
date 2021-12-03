@@ -5,4 +5,4 @@ spring:
     active: dev
 server:
   servlet:
-    path-context: /v1/course-selector
+    context-path: /v1/course-selector-api

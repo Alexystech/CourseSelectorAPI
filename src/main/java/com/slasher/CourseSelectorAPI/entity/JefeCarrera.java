@@ -1,5 +1,6 @@
 package com.slasher.CourseSelectorAPI.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,6 +49,7 @@ public class JefeCarrera {
   @Column(length = 11)
   private String nss;
 
+  @JsonIgnore
   @OneToOne(mappedBy = "jefeCarrera")
   private Carrera carrera;
 

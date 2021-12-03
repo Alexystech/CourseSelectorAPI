@@ -1,5 +1,6 @@
 package com.slasher.CourseSelectorAPI.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,9 +32,11 @@ public class Semestre {
   @Column(name = "semestre")
   private Integer semestre;
 
+  @JsonIgnore
   @OneToOne(mappedBy = "idSemestre")
   private AsignaturaPorCarrera asignaturaPorCarrera;
 
+  @JsonIgnore
   @OneToOne(mappedBy = "idSemestre")
   private AsigHorarioDef asigHorarioDef;
 

@@ -10,4 +10,5 @@ public interface JefeCarreraService {
   JefeCarrera updateJefeCarrera(JefeCarrera jefeCarrera);
   JefeCarrera getJefeCarreraById(String id);
   List<JefeCarrera> getAllJefesCarrera();
+  Boolean login(JefeCarrera jefeCarrera);
 }

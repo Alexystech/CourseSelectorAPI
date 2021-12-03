@@ -1,5 +1,6 @@
 package com.slasher.CourseSelectorAPI.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,7 +49,16 @@ public class Docente {
   @Column(length = 11)
   private String nss;
 
+  @JsonIgnore
   @OneToOne(mappedBy = "idDocente")
   private AsigHorarioDef asigHorarioDef;
 
+  public Docente(String idDocente) {
+    this.idDocente = idDocente;
+  }
+
+  public Docente(String idDocente, String password) {
+    this.idDocente = idDocente;
+    this.password = password;
+  }
 }

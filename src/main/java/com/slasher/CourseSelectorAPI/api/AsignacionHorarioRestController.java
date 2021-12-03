@@ -2,6 +2,7 @@ package com.slasher.CourseSelectorAPI.api;
 
 import com.slasher.CourseSelectorAPI.entity.AsignacionHorario;
 import com.slasher.CourseSelectorAPI.service.AsignacionHorarioService;
+import com.slasher.CourseSelectorAPI.util.Horario;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,4 +83,17 @@ public class AsignacionHorarioRestController {
     return new ResponseEntity<>(asignacionHorarioService
         .getAllAsignacionHorarios(), HttpStatus.OK);
   }
+
+  @GetMapping(path = "/exist/any/asignacion/horario/by/docente/{idDocente}")
+  public ResponseEntity<Boolean> existAnyAsigHorarioByDocenteId(@PathVariable String idDocente) {
+    return new ResponseEntity<>(asignacionHorarioService.existAnyAsigHorarioByDocenteId(idDocente),
+        HttpStatus.OK);
+  }
+
+  @GetMapping(path = "/get/all/asignacion/by/docente/{idDocente}")
+  public ResponseEntity<List<Horario>> findAllAignacionesByIdDocente(@PathVariable String idDocente) {
+    return new ResponseEntity<>(asignacionHorarioService.findAllAsignacionesByIdDocente(idDocente)
+        , HttpStatus.OK);
+  }
+
 }

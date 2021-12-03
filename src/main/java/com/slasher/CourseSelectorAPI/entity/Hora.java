@@ -1,5 +1,6 @@
 package com.slasher.CourseSelectorAPI.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -38,8 +39,13 @@ public class Hora {
   @JoinColumn(name = "fk_id_dia", referencedColumnName = "id_dia", nullable = false)
   private Dia dia;
 
+  @JsonIgnore
   @OneToOne(mappedBy = "idHora")
   private AsigHorarioDef asigHorarioDef;
+
+  public Hora(Long idHora) {
+    this.idHora = idHora;
+  }
 
   public Hora(LocalTime hora, Dia dia) {
     super();
