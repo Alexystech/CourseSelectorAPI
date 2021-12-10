@@ -5,6 +5,7 @@ import com.slasher.CourseSelectorAPI.repository.AsignaturaPorCarreraRepository;
 import com.slasher.CourseSelectorAPI.service.AsignaturaPorCarreraService;
 import com.slasher.CourseSelectorAPI.service.exception.AsignaturaPorCarreraIsNullException;
 import com.slasher.CourseSelectorAPI.service.exception.AsignaturaPorCarreraNotFoundException;
+import com.slasher.CourseSelectorAPI.util.MateriasDisponibles;
 import io.vavr.control.Try;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,5 +65,10 @@ public class AsignaturaPorCarreraServiceImpl implements AsignaturaPorCarreraServ
   @Override
   public List<AsignaturaPorCarrera> getAllAsignaturasPorCarrera() {
     return ((List<AsignaturaPorCarrera>) asigPorCarreraRepository.findAll());
+  }
+
+  @Override
+  public List<MateriasDisponibles> getMateriasDisponibles() {
+    return asigPorCarreraRepository.findMateriasDisponibles();
   }
 }

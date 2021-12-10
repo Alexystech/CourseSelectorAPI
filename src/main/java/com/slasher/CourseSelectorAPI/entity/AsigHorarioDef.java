@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -37,7 +38,7 @@ public class AsigHorarioDef {
   @JoinColumn(name = "fk_id_hora", referencedColumnName = "id_hora", nullable = false)
   private Hora idHora;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "fk_id_asignatura", referencedColumnName = "id_asignatura", nullable = false)
   private Asignatura idAsignatura;
 

@@ -68,8 +68,7 @@ public class JefeCarreraServiceImpl implements JefeCarreraService {
 
   @Override
   public List<JefeCarrera> getAllJefesCarrera() {
-    List<JefeCarrera> list = ((List<JefeCarrera>) jefeCarreraRepository.findAll());
-    return list;
+    return ((List<JefeCarrera>) jefeCarreraRepository.findAll());
   }
 
   @Override
@@ -84,5 +83,10 @@ public class JefeCarreraServiceImpl implements JefeCarreraService {
     }
 
     return false;
+  }
+
+  @Override
+  public List<JefeCarrera> getJefesCarreraFilteredByIdJefeCarreraInCarreras() {
+    return jefeCarreraRepository.findJefesCarreraFilteredByIdJefeCarreraInCarreras();
   }
 }

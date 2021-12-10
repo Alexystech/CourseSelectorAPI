@@ -2,6 +2,7 @@ package com.slasher.CourseSelectorAPI.api;
 
 import com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera;
 import com.slasher.CourseSelectorAPI.service.AsignaturaPorCarreraService;
+import com.slasher.CourseSelectorAPI.util.MateriasDisponibles;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,12 @@ public class AsignaturaPorCarreraRestController {
   public ResponseEntity<List<AsignaturaPorCarrera>> getAllAsignaturasPorCarrera() {
     return new ResponseEntity<>(asigPorCarreraService
         .getAllAsignaturasPorCarrera(), HttpStatus.OK);
+  }
+
+  @GetMapping(path = "/get/all/asignaturas/disponibles")
+  public ResponseEntity<List<MateriasDisponibles>> getMateriasDisponibles() {
+    return new ResponseEntity<>(asigPorCarreraService.getMateriasDisponibles()
+        , HttpStatus.OK);
   }
 
 }

@@ -53,6 +53,10 @@ public class JefeCarrera {
   @OneToOne(mappedBy = "jefeCarrera")
   private Carrera carrera;
 
+  public JefeCarrera(String idJefeCarrera) {
+    this.idJefeCarrera = idJefeCarrera;
+  }
+
   public JefeCarrera(String password, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc, String curp, String domicilio, String nss, Carrera carrera) {
     super();
     this.password = password;

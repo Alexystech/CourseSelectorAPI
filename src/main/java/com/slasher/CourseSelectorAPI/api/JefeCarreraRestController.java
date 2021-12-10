@@ -88,4 +88,10 @@ public class JefeCarreraRestController {
         , HttpStatus.ACCEPTED);
   }
 
+  @GetMapping(path = "/get/jefes-carrera/filtered/by/unsigned")
+  public ResponseEntity<List<JefeCarrera>> getJefesCarreraFilteredByIdJefeCarreraInCarreras() {
+    return new ResponseEntity<>(jefeCarreraService.getJefesCarreraFilteredByIdJefeCarreraInCarreras(),
+        HttpStatus.OK);
+  }
+
 }

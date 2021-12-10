@@ -14,7 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,10 +31,6 @@ public class AsignaturaPorCarrera {
   private Long idAsigPorCarrera;
 
   @ManyToOne(fetch = FetchType.EAGER)
-  @JoinColumn(name = "fk_id_docente", referencedColumnName = "id_docente")
-  private Docente idDocente;
-
-  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "fk_id_asignatura", referencedColumnName = "id_asignatura", nullable = false)
   private Asignatura idAsignatura;
 
@@ -43,13 +38,17 @@ public class AsignaturaPorCarrera {
   @JoinColumn(name = "fk_id_carrera", referencedColumnName = "id_carrera", nullable = false)
   private Carrera idCarrera;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "fk_id_semestre", referencedColumnName = "id_semestre", nullable = false)
   private Semestre idSemestre;
 
-  public AsignaturaPorCarrera(Docente idDocente, Asignatura idAsignatura, Carrera idCarrera, Semestre idSemestre) {
+  public AsignaturaPorCarrera(Long idAsigPorCarrera) {
     super();
-    this.idDocente = idDocente;
+    this.idAsigPorCarrera = idAsigPorCarrera;
+  }
+
+  public AsignaturaPorCarrera(Asignatura idAsignatura, Carrera idCarrera, Semestre idSemestre) {
+    super();
     this.idAsignatura = idAsignatura;
     this.idCarrera = idCarrera;
     this.idSemestre = idSemestre;

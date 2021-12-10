@@ -16,31 +16,34 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "asig_horarios")
-@AllArgsConstructor
+@Table(name = "sol_materias")
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Getter
 @Setter
-public class AsignacionHorario {
+public class SolicitudMateria {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id_asig_horario")
-  private Long idAsigHorario;
+  @Column(name = "id_sol_materia")
+  private Long idSolMateria;
 
   @ManyToOne
   @JoinColumn(name = "fk_id_docente", referencedColumnName = "id_docente", nullable = false)
-  private Docente idDocente;
+  private Docente docente;
 
   @ManyToOne
-  @JoinColumn(name = "fk_id_hora", referencedColumnName = "id_hora", nullable = false)
-  private Hora idHora;
+  @JoinColumn(name = "fk_id_asig_por_carrera", referencedColumnName = "id_asig_por_carrera", nullable = false)
+  private AsignaturaPorCarrera asignaturaPorCarrera;
 
-  public AsignacionHorario(Docente idDocente, Hora idHora) {
+  public SolicitudMateria(Docente docente, AsignaturaPorCarrera asignaturaPorCarrera) {
     super();
-    this.idDocente = idDocente;
-    this.idHora = idHora;
+    this.docente = docente;
+    this.asignaturaPorCarrera = asignaturaPorCarrera;
   }
 
+  public SolicitudMateria(Long idSolMateria) {
+    this.idSolMateria = idSolMateria;
+  }
 }

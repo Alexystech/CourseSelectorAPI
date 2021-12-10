@@ -1,15 +1,19 @@
 package com.slasher.CourseSelectorAPI.service.impl;
 
 import com.slasher.CourseSelectorAPI.entity.AsignacionHorario;
+import com.slasher.CourseSelectorAPI.entity.Docente;
 import com.slasher.CourseSelectorAPI.repository.AsignacionHorarioRepository;
 import com.slasher.CourseSelectorAPI.service.AsignacionHorarioService;
 import com.slasher.CourseSelectorAPI.service.exception.AsignacionHorarioIsNullException;
 import com.slasher.CourseSelectorAPI.service.exception.AsignacionHorarioNotFoundException;
 import com.slasher.CourseSelectorAPI.util.Horario;
+import com.slasher.CourseSelectorAPI.util.TopDocentesMayorDisponibilidad;
 import io.vavr.control.Try;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -79,4 +83,20 @@ public class AsignacionHorarioServiceImpl implements AsignacionHorarioService {
   public List<Horario> findAllAsignacionesByIdDocente(String idDocente) {
     return asigHorarioRepository.findAllAsignacionesByIdDocente(idDocente);
   }
+
+  @Override
+  public List<TopDocentesMayorDisponibilidad> getTopDocentesMayorDisponibilidad() {
+    List<Docente> docentes = asigHorarioRepository.findAllDocentes();
+
+    List<TopDocentesMayorDisponibilidad> docentesMayorDisponibilidad = docentes.stream()
+        .map(docente -> {
+          String idDocente = docente.getIdDocente();
+          int horas = findAllAsignacionesByIdDocente(docente.getIdDocente()).size() * 2;
+
+          return new TopDocentesMayorDisponibilidad(idDocente, horas);
+        }).collect(Collectors.toList());
+
+    return docentesMayorDisponibilidad;
+  }
+
 }

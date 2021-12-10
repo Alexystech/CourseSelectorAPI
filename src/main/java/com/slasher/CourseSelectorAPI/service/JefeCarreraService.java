@@ -11,4 +11,5 @@ public interface JefeCarreraService {
   JefeCarrera getJefeCarreraById(String id);
   List<JefeCarrera> getAllJefesCarrera();
   Boolean login(JefeCarrera jefeCarrera);
+  List<JefeCarrera> getJefesCarreraFilteredByIdJefeCarreraInCarreras();
 }
