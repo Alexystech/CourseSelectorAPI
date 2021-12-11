@@ -15,4 +15,7 @@ public interface AsigHorarioDefRepository extends CrudRepository<AsigHorarioDef,
   @Query(value = "SELECT new com.slasher.CourseSelectorAPI.util.AsigHorarioDefByDocente(asig.semestre, asig.idHora.hora, asig.idAsignatura.nombreAsignatura) FROM AsigHorarioDef asig WHERE asig.idDocente.idDocente = :idDocente")
   List<AsigHorarioDefByDocente> findAsigHorariosByIdDocente(@Param("idDocente") String idDocente);
 
+  @Query(value = "SELECT a FROM AsigHorarioDef a WHERE a.idDocente.idDocente = :idDocente")
+  List<AsigHorarioDef> findAsigHorarioDefByIdDocente(@Param("idDocente") String idDocente);
+
 }

@@ -48,4 +48,9 @@ public class AsigHorarioServiceImpl implements AsigHorarioDefService {
   public List<AsigHorarioDefByDocente> getAllAsignacionesByIdDocente(String idDocente) {
     return asignacionRepository.findAsigHorariosByIdDocente(idDocente);
   }
+
+  @Override
+  public List<AsigHorarioDef> getAsigHorarioDefByIdDocente(String idDocente) {
+    return asignacionRepository.findAsigHorarioDefByIdDocente(idDocente);
+  }
 }
