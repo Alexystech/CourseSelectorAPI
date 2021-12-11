@@ -13,7 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,11 +29,9 @@ public class AsigHorarioDef {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idAsigHorarioDef;
 
-  @OneToOne
-  @JoinColumn(name = "fk_id_semestre", referencedColumnName = "id_semestre", nullable = false)
-  private Semestre idSemestre;
+  private Integer semestre;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "fk_id_hora", referencedColumnName = "id_hora", nullable = false)
   private Hora idHora;
 
@@ -42,8 +39,18 @@ public class AsigHorarioDef {
   @JoinColumn(name = "fk_id_asignatura", referencedColumnName = "id_asignatura", nullable = false)
   private Asignatura idAsignatura;
 
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "fk_id_docente", referencedColumnName = "id_docente", nullable = false)
   private Docente idDocente;
 
+  public AsigHorarioDef(Long idAsigHorarioDef) {
+    this.idAsigHorarioDef = idAsigHorarioDef;
+  }
+
+  public AsigHorarioDef(Integer semestre, Hora idHora, Asignatura idAsignatura, Docente idDocente) {
+    this.semestre = semestre;
+    this.idHora = idHora;
+    this.idAsignatura = idAsignatura;
+    this.idDocente = idDocente;
+  }
 }

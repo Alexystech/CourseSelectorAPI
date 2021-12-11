@@ -30,6 +30,10 @@ public class Semestre {
   @Column(name = "semestre")
   private Integer semestre;
 
+  public Semestre(Long idSemestre) {
+    this.idSemestre = idSemestre;
+  }
+
   public Semestre(Integer semestre) {
     this.semestre = semestre;
   }

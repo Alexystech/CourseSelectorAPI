@@ -15,4 +15,7 @@ public interface SolicitudMateriaRespository extends CrudRepository<SolicitudMat
   @Query(value = "SELECT new com.slasher.CourseSelectorAPI.util.MateriasSolicitadas(materia.asignaturaPorCarrera.idAsignatura.nombreAsignatura, materia.asignaturaPorCarrera.idSemestre.semestre, materia.asignaturaPorCarrera.idCarrera.nombreCarrera) FROM SolicitudMateria materia WHERE materia.docente.idDocente = :idDocente")
   List<MateriasSolicitadas> findAllMateriasSolicitadas(@Param("idDocente") String idDocente);
 
+  @Query(value = "SELECT s FROM SolicitudMateria s WHERE s.asignaturaPorCarrera.idAsigPorCarrera = :asignaturaPorCarrera")
+  List<SolicitudMateria> findSolicitudesByMateria(@Param("asignaturaPorCarrera") long asignaturaPorCarrera);
+
 }

@@ -36,6 +36,11 @@ public class Asignatura {
   @OneToOne(mappedBy = "idAsignatura")
   private AsigHorarioDef asigHorarioDef;
 
+  public Asignatura(Long idAsignatura) {
+    super();
+    this.idAsignatura = idAsignatura;
+  }
+
   public Asignatura(String nombreAsignatura) {
     super();
     this.nombreAsignatura = nombreAsignatura;

@@ -90,4 +90,9 @@ public class AsignaturaPorCarreraRestController {
         , HttpStatus.OK);
   }
 
+  @GetMapping(path = "/get/asignaturas/by/{semestre}")
+  public ResponseEntity<List<AsignaturaPorCarrera>> getAsignaturasBySemestre(@PathVariable int semestre) {
+    return new ResponseEntity<>(asigPorCarreraService.getAsignaturasBySemestre(semestre)
+        , HttpStatus.OK);
+  }
 }

@@ -51,9 +51,15 @@ public class SolicitudMateriaRestController {
         , HttpStatus.OK);
   }
 
-  @GetMapping(path = " {idDocente}")
+  @GetMapping(path = "/get/materias/solicitadas/by/{idDocente}")
   public ResponseEntity<List<MateriasSolicitadas>> getAllMateriasSolicitadas(@PathVariable String idDocente) {
     return new ResponseEntity<>(solicitudMateriaService.getAllMateriasSolicitadas(idDocente)
+        , HttpStatus.OK);
+  }
+
+  @GetMapping(path = "/get/solicitudes/by/{asignaturaPorCarrera}")
+  public ResponseEntity<List<SolicitudMateria>> getSolicitudesByMateria(@PathVariable long asignaturaPorCarrera) {
+    return new ResponseEntity<>(solicitudMateriaService.getSolicitudesByMateria(asignaturaPorCarrera)
         , HttpStatus.OK);
   }
 

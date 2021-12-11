@@ -1,6 +1,5 @@
 package com.slasher.CourseSelectorAPI.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.time.LocalTime;
 
@@ -38,10 +36,6 @@ public class Hora {
   @ManyToOne
   @JoinColumn(name = "fk_id_dia", referencedColumnName = "id_dia", nullable = false)
   private Dia dia;
-
-  @JsonIgnore
-  @OneToOne(mappedBy = "idHora")
-  private AsigHorarioDef asigHorarioDef;
 
   public Hora(Long idHora) {
     this.idHora = idHora;
