@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.slasher.CourseSelectorAPI.entity</OriginalElement>
+  <nodes>
+    <node x="957.6576086956522" y="405.0">com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera</node>
+    <node x="1462.758152173913" y="45.090909090909115">com.slasher.CourseSelectorAPI.entity.Carrera</node>
+    <node x="1036.758152173913" y="45.090909090909115">com.slasher.CourseSelectorAPI.entity.Semestre</node>
+    <node x="412.0326086956522" y="34.090909090909115">com.slasher.CourseSelectorAPI.entity.Asignatura</node>
+    <node x="44.0" y="56.090909090909115">com.slasher.CourseSelectorAPI.entity.Dia</node>
+    <node x="22.0" y="416.0">com.slasher.CourseSelectorAPI.entity.Hora</node>
+    <node x="1345.383152173913" y="720.0">com.slasher.CourseSelectorAPI.entity.SuperUsuario</node>
+    <node x="969.6576086956522" y="864.0">com.slasher.CourseSelectorAPI.entity.SolicitudMateria</node>
+    <node x="20.657608695652357" y="875.0">com.slasher.CourseSelectorAPI.entity.AsignacionHorario</node>
+    <node x="1343.657608695652" y="339.0">com.slasher.CourseSelectorAPI.entity.JefeCarrera</node>
+    <node x="680.6576086956522" y="864.0">com.slasher.CourseSelectorAPI.entity.Escolaridad</node>
+    <node x="479.91576086956525" y="350.0">com.slasher.CourseSelectorAPI.entity.Docente</node>
+    <node x="304.6576086956523" y="842.0">com.slasher.CourseSelectorAPI.entity.AsigHorarioDef</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignacionHorario" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="TO_ONE">
+      <point x="66.0" y="-95.0" />
+      <point x="218.65760869565236" y="821.0" />
+      <point x="334.625" y="821.0" />
+      <point x="334.625" y="791.0" />
+      <point x="761.1820652173913" y="791.0" />
+      <point x="761.1820652173913" y="711.0" />
+      <point x="802.4157608695652" y="711.0" />
+      <point x="107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Escolaridad" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="DEPENDENCY">
+      <point x="-67.25" y="-106.0" />
+      <point x="747.9076086956522" y="751.0" />
+      <point x="534.5407608695652" y="751.0" />
+      <point x="534.5407608695652" y="721.0" />
+      <point x="587.4157608695652" y="721.0" />
+      <point x="-107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" target="com.slasher.CourseSelectorAPI.entity.Carrera" relationship="TO_ONE">
+      <point x="91.5" y="-117.0" />
+      <point x="1232.1576086956522" y="338.90909090909093" />
+      <point x="1132.758152173913" y="338.90909090909093" />
+      <point x="1132.758152173913" y="327.0909090909091" />
+      <point x="1582.258152173913" y="327.0909090909091" />
+      <point x="1582.258152173913" y="307.0909090909091" />
+      <point x="1634.508152173913" y="307.0909090909091" />
+      <point x="57.25" y="95.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" target="com.slasher.CourseSelectorAPI.entity.Hora" relationship="DEPENDENCY">
+      <point x="-89.0" y="-128.0" />
+      <point x="393.6576086956523" y="811.0" />
+      <point x="324.625" y="811.0" />
+      <point x="324.625" y="751.0" />
+      <point x="70.75" y="751.0" />
+      <point x="-48.75" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" target="com.slasher.CourseSelectorAPI.entity.Hora" relationship="TO_ONE">
+      <point x="88.99999999999994" y="-128.0" />
+      <point x="571.6576086956522" y="821.0" />
+      <point x="688.25" y="821.0" />
+      <point x="688.25" y="771.0" />
+      <point x="638.0570652173913" y="771.0" />
+      <point x="638.0570652173913" y="731.0" />
+      <point x="168.25" y="731.0" />
+      <point x="48.75" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignacionHorario" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="DEPENDENCY">
+      <point x="-66.0" y="-95.0" />
+      <point x="86.65760869565236" y="821.0" />
+      <point x="48.75" y="821.0" />
+      <point x="48.75" y="761.0" />
+      <point x="534.5407608695652" y="761.0" />
+      <point x="534.5407608695652" y="721.0" />
+      <point x="587.4157608695652" y="721.0" />
+      <point x="-107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" target="com.slasher.CourseSelectorAPI.entity.Carrera" relationship="DEPENDENCY">
+      <point x="-91.5" y="-117.0" />
+      <point x="1049.1576086956522" y="338.90909090909093" />
+      <point x="1122.758152173913" y="338.90909090909093" />
+      <point x="1122.758152173913" y="307.0909090909091" />
+      <point x="1572.258152173913" y="307.0909090909091" />
+      <point x="1572.258152173913" y="297.0909090909091" />
+      <point x="1520.008152173913" y="297.0909090909091" />
+      <point x="-57.25" y="95.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Hora" target="com.slasher.CourseSelectorAPI.entity.Dia" relationship="TO_ONE">
+      <point x="-48.75" y="-106.0" />
+      <point x="70.75" y="338.90909090909093" />
+      <point x="81.75" y="338.90909090909093" />
+      <point x="-37.75" y="84.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.SolicitudMateria" target="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" relationship="TO_ONE">
+      <point x="85.5" y="-106.0" />
+      <point x="1226.1576086956522" y="821.0" />
+      <point x="1132.758152173913" y="821.0" />
+      <point x="1132.758152173913" y="811.0" />
+      <point x="1232.1576086956522" y="811.0" />
+      <point x="91.5" y="117.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.JefeCarrera" target="com.slasher.CourseSelectorAPI.entity.Carrera" relationship="TO_ONE">
+      <point x="123.25" y="-183.0" />
+      <point x="1713.407608695652" y="317.0909090909091" />
+      <point x="1582.258152173913" y="317.0909090909091" />
+      <point x="1582.258152173913" y="307.0909090909091" />
+      <point x="1634.508152173913" y="307.0909090909091" />
+      <point x="57.25" y="95.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Carrera" target="com.slasher.CourseSelectorAPI.entity.JefeCarrera" relationship="TO_ONE">
+      <point x="57.25" y="95.0" />
+      <point x="1634.508152173913" y="307.0909090909091" />
+      <point x="1582.258152173913" y="307.0909090909091" />
+      <point x="1582.258152173913" y="317.0909090909091" />
+      <point x="1713.407608695652" y="317.0909090909091" />
+      <point x="123.25" y="-183.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" target="com.slasher.CourseSelectorAPI.entity.Asignatura" relationship="TO_ONE">
+      <point x="88.99999999999994" y="-128.0" />
+      <point x="571.6576086956522" y="821.0" />
+      <point x="688.25" y="821.0" />
+      <point x="688.25" y="811.0" />
+      <point x="920.4157608695652" y="811.0" />
+      <point x="920.4157608695652" y="267.0909090909091" />
+      <point x="613.7826086956522" y="267.0909090909091" />
+      <point x="67.25" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Asignatura" target="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" relationship="TO_ONE">
+      <point x="67.25" y="106.0" />
+      <point x="613.7826086956522" y="267.0909090909091" />
+      <point x="920.4157608695652" y="267.0909090909091" />
+      <point x="920.4157608695652" y="811.0" />
+      <point x="688.25" y="811.0" />
+      <point x="688.25" y="821.0" />
+      <point x="571.6576086956522" y="821.0" />
+      <point x="88.99999999999994" y="-128.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" target="com.slasher.CourseSelectorAPI.entity.Asignatura" relationship="DEPENDENCY">
+      <point x="-89.0" y="-128.0" />
+      <point x="393.6576086956523" y="811.0" />
+      <point x="324.625" y="811.0" />
+      <point x="324.625" y="741.0" />
+      <point x="280.625" y="741.0" />
+      <point x="280.625" y="287.0909090909091" />
+      <point x="479.28260869565224" y="287.0909090909091" />
+      <point x="-67.25" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Asignatura" target="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" relationship="DEPENDENCY">
+      <point x="-67.25" y="106.0" />
+      <point x="479.28260869565224" y="287.0909090909091" />
+      <point x="280.625" y="287.0909090909091" />
+      <point x="280.625" y="741.0" />
+      <point x="324.625" y="741.0" />
+      <point x="324.625" y="811.0" />
+      <point x="393.6576086956523" y="811.0" />
+      <point x="-89.0" y="-128.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Hora" target="com.slasher.CourseSelectorAPI.entity.Dia" relationship="DEPENDENCY">
+      <point x="48.75" y="-106.0" />
+      <point x="168.25" y="338.90909090909093" />
+      <point x="157.25" y="338.90909090909093" />
+      <point x="37.75" y="84.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" target="com.slasher.CourseSelectorAPI.entity.Semestre" relationship="TO_ONE">
+      <point x="91.5" y="-117.0" />
+      <point x="1232.1576086956522" y="338.90909090909093" />
+      <point x="1132.758152173913" y="338.90909090909093" />
+      <point x="1132.758152173913" y="297.0909090909091" />
+      <point x="1173.258152173913" y="297.0909090909091" />
+      <point x="45.5" y="95.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.SolicitudMateria" target="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" relationship="DEPENDENCY">
+      <point x="-85.5" y="-106.0" />
+      <point x="1055.1576086956522" y="821.0" />
+      <point x="1122.758152173913" y="821.0" />
+      <point x="1122.758152173913" y="731.0" />
+      <point x="1049.1576086956522" y="731.0" />
+      <point x="-91.5" y="117.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="DEPENDENCY">
+      <point x="-89.0" y="-128.0" />
+      <point x="393.6576086956523" y="811.0" />
+      <point x="324.625" y="811.0" />
+      <point x="324.625" y="771.0" />
+      <point x="534.5407608695652" y="771.0" />
+      <point x="534.5407608695652" y="721.0" />
+      <point x="587.4157608695652" y="721.0" />
+      <point x="-107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.SolicitudMateria" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="DEPENDENCY">
+      <point x="-85.5" y="-106.0" />
+      <point x="1055.1576086956522" y="821.0" />
+      <point x="1122.758152173913" y="821.0" />
+      <point x="1122.758152173913" y="741.0" />
+      <point x="534.5407608695652" y="741.0" />
+      <point x="534.5407608695652" y="721.0" />
+      <point x="587.4157608695652" y="721.0" />
+      <point x="-107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.SolicitudMateria" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="TO_ONE">
+      <point x="85.5" y="-106.0" />
+      <point x="1226.1576086956522" y="821.0" />
+      <point x="1132.758152173913" y="821.0" />
+      <point x="1132.758152173913" y="721.0" />
+      <point x="761.1820652173913" y="721.0" />
+      <point x="761.1820652173913" y="711.0" />
+      <point x="802.4157608695652" y="711.0" />
+      <point x="107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Carrera" target="com.slasher.CourseSelectorAPI.entity.JefeCarrera" relationship="DEPENDENCY">
+      <point x="-57.25" y="95.0" />
+      <point x="1520.008152173913" y="297.0909090909091" />
+      <point x="1572.258152173913" y="297.0909090909091" />
+      <point x="1572.258152173913" y="317.0909090909091" />
+      <point x="1466.907608695652" y="317.0909090909091" />
+      <point x="-123.25" y="-183.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.JefeCarrera" target="com.slasher.CourseSelectorAPI.entity.Carrera" relationship="DEPENDENCY">
+      <point x="-123.25" y="-183.0" />
+      <point x="1466.907608695652" y="317.0909090909091" />
+      <point x="1572.258152173913" y="317.0909090909091" />
+      <point x="1572.258152173913" y="297.0909090909091" />
+      <point x="1520.008152173913" y="297.0909090909091" />
+      <point x="-57.25" y="95.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignacionHorario" target="com.slasher.CourseSelectorAPI.entity.Hora" relationship="TO_ONE">
+      <point x="66.0" y="-95.0" />
+      <point x="218.65760869565236" y="821.0" />
+      <point x="334.625" y="821.0" />
+      <point x="334.625" y="781.0" />
+      <point x="638.0570652173913" y="781.0" />
+      <point x="638.0570652173913" y="731.0" />
+      <point x="168.25" y="731.0" />
+      <point x="48.75" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" target="com.slasher.CourseSelectorAPI.entity.Asignatura" relationship="TO_ONE">
+      <point x="91.5" y="-117.0" />
+      <point x="1232.1576086956522" y="338.90909090909093" />
+      <point x="1132.758152173913" y="338.90909090909093" />
+      <point x="1132.758152173913" y="277.0909090909091" />
+      <point x="920.4157608695652" y="277.0909090909091" />
+      <point x="920.4157608695652" y="267.0909090909091" />
+      <point x="613.7826086956522" y="267.0909090909091" />
+      <point x="67.25" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignacionHorario" target="com.slasher.CourseSelectorAPI.entity.Hora" relationship="DEPENDENCY">
+      <point x="-66.0" y="-95.0" />
+      <point x="86.65760869565236" y="821.0" />
+      <point x="70.75" y="821.0" />
+      <point x="-48.75" y="106.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsigHorarioDef" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="TO_ONE">
+      <point x="88.99999999999994" y="-128.0" />
+      <point x="571.6576086956522" y="821.0" />
+      <point x="688.25" y="821.0" />
+      <point x="688.25" y="801.0" />
+      <point x="761.1820652173913" y="801.0" />
+      <point x="761.1820652173913" y="711.0" />
+      <point x="802.4157608695652" y="711.0" />
+      <point x="107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.Escolaridad" target="com.slasher.CourseSelectorAPI.entity.Docente" relationship="TO_ONE">
+      <point x="67.25" y="-106.0" />
+      <point x="882.4076086956522" y="781.0" />
+      <point x="761.1820652173913" y="781.0" />
+      <point x="761.1820652173913" y="711.0" />
+      <point x="802.4157608695652" y="711.0" />
+      <point x="107.5" y="172.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" target="com.slasher.CourseSelectorAPI.entity.Semestre" relationship="DEPENDENCY">
+      <point x="-91.5" y="-117.0" />
+      <point x="1049.1576086956522" y="338.90909090909093" />
+      <point x="1122.758152173913" y="338.90909090909093" />
+      <point x="1122.758152173913" y="287.0909090909091" />
+      <point x="1082.258152173913" y="287.0909090909091" />
+      <point x="-45.5" y="95.0" />
+    </edge>
+    <edge source="com.slasher.CourseSelectorAPI.entity.AsignaturaPorCarrera" target="com.slasher.CourseSelectorAPI.entity.Asignatura" relationship="DEPENDENCY">
+      <point x="-91.5" y="-117.0" />
+      <point x="1049.1576086956522" y="338.90909090909093" />
+      <point x="1122.758152173913" y="338.90909090909093" />
+      <point x="1122.758152173913" y="297.0909090909091" />
+      <point x="280.625" y="297.0909090909091" />
+      <point x="280.625" y="287.0909090909091" />
+      <point x="479.28260869565224" y="287.0909090909091" />
+      <point x="-67.25" y="106.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5499999999999999" showDependencies="true" x="873.6363636363637" y="515.0000000000001" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

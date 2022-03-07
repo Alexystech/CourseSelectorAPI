@@ -6,14 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "asig_horario_def")
@@ -39,7 +32,7 @@ public class AsigHorarioDef {
   @JoinColumn(name = "fk_id_asignatura", referencedColumnName = "id_asignatura", nullable = false)
   private Asignatura idAsignatura;
 
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "fk_id_docente", referencedColumnName = "id_docente", nullable = false)
   private Docente idDocente;
 

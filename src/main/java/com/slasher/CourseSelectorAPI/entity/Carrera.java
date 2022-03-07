@@ -6,14 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "carreras")
@@ -32,7 +25,7 @@ public class Carrera {
   @Column(name = "nombre_carrera", length = 75)
   private String nombreCarrera;
 
-  @OneToOne
+  @OneToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "fk_id_jefe_carrera", referencedColumnName = "id_jefe_de_carrera")
   private JefeCarrera jefeCarrera;
 

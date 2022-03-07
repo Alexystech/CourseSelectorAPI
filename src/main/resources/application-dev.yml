@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: postgres
-    password:
+    password: postgres
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/course_selector_db?serverTimezone=UTC
   jpa:
