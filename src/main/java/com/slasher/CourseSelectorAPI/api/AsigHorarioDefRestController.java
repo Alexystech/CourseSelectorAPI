@@ -70,4 +70,10 @@ public class AsigHorarioDefRestController {
         , HttpStatus.OK);
   }
 
+  @GetMapping(path = "/get/asig/def/by/jefe/carrera/{idJefeCarrera}")
+  public ResponseEntity<List<AsigHorarioDef>> getAsigHorarioDefByJefeCarrera(@PathVariable String idJefeCarrera) {
+    return new ResponseEntity<>(asignacionService.getAsigHorarioDefByJefeCarrera(idJefeCarrera)
+            , HttpStatus.OK);
+  }
+
 }

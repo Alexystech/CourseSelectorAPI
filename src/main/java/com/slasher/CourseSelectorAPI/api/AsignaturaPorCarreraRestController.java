@@ -95,4 +95,10 @@ public class AsignaturaPorCarreraRestController {
     return new ResponseEntity<>(asigPorCarreraService.getAsignaturasBySemestre(semestre)
         , HttpStatus.OK);
   }
+
+  @GetMapping(path = "/get/asig/por/carrera/by/carrera/{idCarrera}")
+  public ResponseEntity<List<AsignaturaPorCarrera>> getAsignturaPorCarreaByCarrera(@PathVariable long idCarrera) {
+    return new ResponseEntity<>(asigPorCarreraService.getAsignturaPorCarreaByCarrera(idCarrera)
+            , HttpStatus.OK);
+  }
 }

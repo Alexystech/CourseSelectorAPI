@@ -76,4 +76,9 @@ public class AsignaturaPorCarreraServiceImpl implements AsignaturaPorCarreraServ
   public List<AsignaturaPorCarrera> getAsignaturasBySemestre(int semestre) {
     return asigPorCarreraRepository.findAsignaturasBySemestre(semestre);
   }
+
+  @Override
+  public List<AsignaturaPorCarrera> getAsignturaPorCarreaByCarrera(long idCarrera) {
+    return asigPorCarreraRepository.findAsignturaPorCarreaByCarrera(idCarrera);
+  }
 }

@@ -18,4 +18,7 @@ public interface AsignaturaPorCarreraRepository extends CrudRepository<Asignatur
   @Query(value = "SELECT a FROM AsignaturaPorCarrera a WHERE a.idSemestre.semestre = :semestre")
   List<AsignaturaPorCarrera> findAsignaturasBySemestre(@Param("semestre") int semestre);
 
+  @Query(value = "SELECT a FROM AsignaturaPorCarrera a WHERE a.idCarrera.idCarrera = :idCarrera")
+  List<AsignaturaPorCarrera> findAsignturaPorCarreaByCarrera(@Param("idCarrera") long idCarrera);
+
 }

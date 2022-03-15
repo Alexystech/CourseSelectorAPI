@@ -13,4 +13,5 @@ public interface AsignaturaPorCarreraService {
   List<AsignaturaPorCarrera> getAllAsignaturasPorCarrera();
   List<MateriasDisponibles> getMateriasDisponibles();
   List<AsignaturaPorCarrera> getAsignaturasBySemestre(int semestre);
+  List<AsignaturaPorCarrera> getAsignturaPorCarreaByCarrera(long idCarrera);
 }
