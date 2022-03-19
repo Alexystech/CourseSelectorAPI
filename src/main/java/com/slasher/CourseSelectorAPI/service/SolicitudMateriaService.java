@@ -12,4 +12,5 @@ public interface SolicitudMateriaService {
   List<SolicitudMateria> getAllSolicitudes();
   List<MateriasSolicitadas> getAllMateriasSolicitadas(String idAsignaturaPorCarrera);
   List<SolicitudMateria> getSolicitudesByMateria(long asignaturaPorCarrera);
+  List<SolicitudMateria> getSolicitudMateriaByIdDocente(String idDocente);
 }

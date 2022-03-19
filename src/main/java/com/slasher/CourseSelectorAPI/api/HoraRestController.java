@@ -81,4 +81,11 @@ public class HoraRestController {
     return new ResponseEntity<>(horaService.getAllHoras(), HttpStatus.OK);
   }
 
+  @ApiResponse(code = 200, message = "ok")
+  @GetMapping(path = "/get/horas/not/selected/{idJefeCarrera}")
+  public ResponseEntity<List<Hora>> getHorasNotSelected(@PathVariable String idJefeCarrera) {
+    return new ResponseEntity<>(horaService.getHorasNotSelected(idJefeCarrera)
+            , HttpStatus.OK);
+  }
+
 }

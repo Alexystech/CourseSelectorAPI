@@ -10,4 +10,5 @@ public interface HoraService {
   Hora updateHora(Hora hora);
   Hora getHoraById(long id);
   List<Hora> getAllHoras();
+  List<Hora> getHorasNotSelected(String idJefeCarrera);
 }

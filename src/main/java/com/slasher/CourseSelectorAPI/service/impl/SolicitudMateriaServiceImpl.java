@@ -48,4 +48,9 @@ public class SolicitudMateriaServiceImpl implements SolicitudMateriaService {
   public List<SolicitudMateria> getSolicitudesByMateria(long asignaturaPorCarrera) {
     return solicitudMateriaRespository.findSolicitudesByMateria(asignaturaPorCarrera);
   }
+
+  @Override
+  public List<SolicitudMateria> getSolicitudMateriaByIdDocente(String idDocente) {
+    return solicitudMateriaRespository.findSolicitudMateriaByIdDocente(idDocente);
+  }
 }

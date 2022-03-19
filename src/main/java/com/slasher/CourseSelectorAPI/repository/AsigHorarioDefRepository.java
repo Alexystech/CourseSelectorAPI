@@ -18,4 +18,5 @@ public interface AsigHorarioDefRepository extends CrudRepository<AsigHorarioDef,
   @Query(value = "SELECT a FROM AsigHorarioDef a WHERE a.idDocente.idDocente = :idDocente")
   List<AsigHorarioDef> findAsigHorarioDefByIdDocente(@Param("idDocente") String idDocente);
 
+  AsigHorarioDef findAsigHorarioDefByIdHoraIdHora(long idHora);
 }

@@ -90,15 +90,21 @@ public class AsignaturaPorCarreraRestController {
         , HttpStatus.OK);
   }
 
-  @GetMapping(path = "/get/asignaturas/by/{semestre}")
-  public ResponseEntity<List<AsignaturaPorCarrera>> getAsignaturasBySemestre(@PathVariable int semestre) {
-    return new ResponseEntity<>(asigPorCarreraService.getAsignaturasBySemestre(semestre)
+  @GetMapping(path = "/get/asignaturas/by/{semestre}/{idJefeCarrera}")
+  public ResponseEntity<List<AsignaturaPorCarrera>> getAsignaturasBySemestre(@PathVariable int semestre, @PathVariable String idJefeCarrera) {
+    return new ResponseEntity<>(asigPorCarreraService.getAsignaturasBySemestre(semestre, idJefeCarrera)
         , HttpStatus.OK);
   }
 
   @GetMapping(path = "/get/asig/por/carrera/by/carrera/{idCarrera}")
   public ResponseEntity<List<AsignaturaPorCarrera>> getAsignturaPorCarreaByCarrera(@PathVariable long idCarrera) {
     return new ResponseEntity<>(asigPorCarreraService.getAsignturaPorCarreaByCarrera(idCarrera)
+            , HttpStatus.OK);
+  }
+
+  @GetMapping(path = "/get/asig/por/carrera/by/docente/{idDocente}")
+  public ResponseEntity<List<AsignaturaPorCarrera>> getAsignaturasPorCarreraNotSelected(@PathVariable String idDocente) {
+    return new ResponseEntity<>(asigPorCarreraService.getAsignaturasPorCarreraNotSelected(idDocente)
             , HttpStatus.OK);
   }
 }

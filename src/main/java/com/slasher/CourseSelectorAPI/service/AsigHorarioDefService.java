@@ -14,4 +14,5 @@ public interface AsigHorarioDefService {
   List<AsigHorarioDefByDocente> getAllAsignacionesByIdDocente(String idDocente);
   List<AsigHorarioDef> getAsigHorarioDefByIdDocente(String idDocente);
   List<AsigHorarioDef> getAsigHorarioDefByJefeCarrera(String idJefeCarrera);
+  AsigHorarioDef getAsigHorarioDefByIdHora(long idHora);
 }

@@ -12,6 +12,8 @@ public interface AsignaturaPorCarreraService {
   AsignaturaPorCarrera getAsignaturaPorCarreraById(long id);
   List<AsignaturaPorCarrera> getAllAsignaturasPorCarrera();
   List<MateriasDisponibles> getMateriasDisponibles();
-  List<AsignaturaPorCarrera> getAsignaturasBySemestre(int semestre);
+  List<AsignaturaPorCarrera> getAsignaturasBySemestre(int semestre, String idJefeCarrera);
   List<AsignaturaPorCarrera> getAsignturaPorCarreaByCarrera(long idCarrera);
+  AsignaturaPorCarrera getAsignaturaPorCarreraByIdAsignatura(long idAsignatura);
+  List<AsignaturaPorCarrera> getAsignaturasPorCarreraNotSelected(String idDocente);
 }

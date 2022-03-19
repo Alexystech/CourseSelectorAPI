@@ -15,10 +15,13 @@ public interface AsignaturaPorCarreraRepository extends CrudRepository<Asignatur
   @Query(value = "SELECT new com.slasher.CourseSelectorAPI.util.MateriasDisponibles(asignatura.idAsigPorCarrera, asignatura.idAsignatura.nombreAsignatura) FROM AsignaturaPorCarrera asignatura")
   List<MateriasDisponibles> findMateriasDisponibles();
 
-  @Query(value = "SELECT a FROM AsignaturaPorCarrera a WHERE a.idSemestre.semestre = :semestre")
-  List<AsignaturaPorCarrera> findAsignaturasBySemestre(@Param("semestre") int semestre);
+  @Query(value = "SELECT a FROM AsignaturaPorCarrera a WHERE a.idSemestre.semestre = :semestre AND a.idCarrera.jefeCarrera.idJefeCarrera = :idJefeCarrera")
+  List<AsignaturaPorCarrera> findAsignaturasBySemestre(@Param("semestre") int semestre, @Param("idJefeCarrera") String idJefeCarrera);
 
   @Query(value = "SELECT a FROM AsignaturaPorCarrera a WHERE a.idCarrera.idCarrera = :idCarrera")
   List<AsignaturaPorCarrera> findAsignturaPorCarreaByCarrera(@Param("idCarrera") long idCarrera);
+
+  @Query(value = "SELECT a FROM AsignaturaPorCarrera a WHERE a.idAsignatura.idAsignatura = :idAsignatura")
+  AsignaturaPorCarrera findAsignaturaPorCarreraByIdAsignatura(@Param("idAsignatura") long idAsignatura);
 
 }

@@ -32,9 +32,11 @@ public class Asignatura {
   @Column(name = "nombre_asignatura", length = 75)
   private String nombreAsignatura;
 
-  @JsonIgnore
-  @OneToOne(mappedBy = "idAsignatura")
-  private AsigHorarioDef asigHorarioDef;
+  /**
+   *   @JsonIgnore
+   *   @OneToOne(mappedBy = "idAsignatura")
+   *   private AsigHorarioDef asigHorarioDef;
+   */
 
   public Asignatura(Long idAsignatura) {
     super();

@@ -68,7 +68,7 @@ public class AsigHorarioServiceImpl implements AsigHorarioDefService {
 
   @Override
   public List<AsigHorarioDef> getAsigHorarioDefByJefeCarrera(String idJefeCarrera) {
-    Carrera carrera = carreraRepository.findCarrerasByJefeCarrera(idJefeCarrera);
+    Carrera carrera = carreraRepository.findCarrerasByIdJefeCarrera(idJefeCarrera);
 
     System.out.println(carrera.getNombreCarrera());
 
@@ -93,5 +93,10 @@ public class AsigHorarioServiceImpl implements AsigHorarioDefService {
     }
 
     return asigHorarioDefByJC;
+  }
+
+  @Override
+  public AsigHorarioDef getAsigHorarioDefByIdHora(long idHora) {
+    return asignacionRepository.findAsigHorarioDefByIdHoraIdHora(idHora);
   }
 }

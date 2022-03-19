@@ -18,4 +18,6 @@ public interface SolicitudMateriaRespository extends CrudRepository<SolicitudMat
   @Query(value = "SELECT s FROM SolicitudMateria s WHERE s.asignaturaPorCarrera.idAsigPorCarrera = :asignaturaPorCarrera")
   List<SolicitudMateria> findSolicitudesByMateria(@Param("asignaturaPorCarrera") long asignaturaPorCarrera);
 
+  @Query(value = "SELECT s FROM SolicitudMateria s WHERE s.docente.idDocente = :idDocente")
+  List<SolicitudMateria> findSolicitudMateriaByIdDocente(@Param("idDocente") String idDocente);
 }
